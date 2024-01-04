@@ -1,10 +1,11 @@
 package model;
 
+import dao.AccountsDAO;
+
 public class LoginLogic {
-	public boolean execute(User user) {
-		if (user.getPass().equals("1234")) {
-			return true;
-		}
-		return false;
-	}
+  public boolean execute(Login login) {
+    AccountsDAO dao = new AccountsDAO();
+    Account account = dao.findByLogin(login);
+    return account != null;
+  }
 }

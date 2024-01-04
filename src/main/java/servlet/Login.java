@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.LoginLogic;
+import model.LoginLogicPractice;
 import model.User;
 
 @WebServlet("/Login")
@@ -29,7 +29,7 @@ public class Login  extends HttpServlet {
 		User user = new User(name, pass);
 
 		// ログイン処理
-		LoginLogic loginLogic = new LoginLogic();
+		LoginLogicPractice loginLogic = new LoginLogicPractice();
 		boolean isLogin = loginLogic.execute(user);
 
 		// ログイン成功時の処理
